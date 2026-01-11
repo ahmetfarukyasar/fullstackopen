@@ -1,3 +1,5 @@
+```mermaid
+
 sequenceDiagram
     participant user
     participant browser
@@ -13,3 +15,5 @@ sequenceDiagram
     Note right of browser: SPA updates notes list without page reload
 
     browser-->>user: updated note list
+
+```

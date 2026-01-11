@@ -1,3 +1,5 @@
+```mermaid
+
 sequenceDiagram
 
     participant browser
@@ -35,3 +37,5 @@ sequenceDiagram
     server-->>browser: JSON raw data file
     deactivate server
     Note right of browser: Browser executes the callback function that renders the notes.
+
+```

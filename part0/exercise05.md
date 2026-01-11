@@ -1,3 +1,5 @@
+```mermaid
+
 sequenceDiagram
 
     participant browser
@@ -30,4 +32,6 @@ sequenceDiagram
     server-->>browser: 201 Created
     deactivate server
 
-    Note right of browser: SPA updates UI without page reload
+    Note right of browser: SPA updates UI without page reload.
+
+```
