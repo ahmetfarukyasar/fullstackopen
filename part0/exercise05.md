@@ -1,0 +1,33 @@
+sequenceDiagram
+
+    participant browser
+    participant server
+    
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: HTML document
+    deactivate server
+    
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: the css file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server-->>browser: the JavaScript file
+    deactivate server
+    Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server.
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: JSON raw data file
+    deactivate server
+    Note right of browser: Browser executes the callback function that renders the notes.
+    
+    browser->>server: POST /new_note_spa JSON raw data (content, date)
+    activate server
+    server-->>browser: 201 Created
+    deactivate server
+
+    Note right of browser: SPA updates UI without page reload
